@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحرف اللغة العربية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('https://f.top4top.io/p_3274sx9iz1.png') no-repeat center center fixed;
+            background-size: 100% 100%;
+            color: #333;
+            margin: 0;
+            padding: 80px 0 0 0; /* إضافة مسافة تعادل سطرين في الأعلى */
+        }
+        .letters-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .letter {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            width: 50px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .letter:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>أحرف اللغة العربية</h1>
+    <p>اضغطي على أي حرف لرؤية بيت شعر أو نصيحة</p>
+    <p>رائدة النشاط / فاطمه المضحي </p>
+    <div class="letters-container" id="letters-container">
+        <!-- الأحرف ستُضاف هنا ديناميكيًا -->
+    </div>
+    <div class="output" id="output">اضغط على أي حرف للبدء</div>
+
+    <script>
+        const letters = [
+            'أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'
+        ];
+
+        const quotes = {
+            'أ': 'أحبب حبيبك هونا ما عسى أن يكون بغيضك يومًا ما.',
+            'ب': 'بادر بالخير تجد الخير في طريقك.',
+            'ت': 'تعلم فإن العلم نور.',
+            'ث': 'ثابر على العمل لتحقق أحلامك.',
+            'ج': 'جمال النفس أسمى من جمال الوجه.',
+            'ح': 'حب لأخيك ما تحب لنفسك.',
+            'خ': 'خير الناس أنفعهم للناس.',
+            'د': 'دع الأيام تفعل ما تشاء.',
+            'ذ': 'ذو العقل يشقى في النعيم بعقله.',
+            'ر': 'رُبَّ أخٍ لك لم تلده أمك.',
+            'ز': 'زيادة الخير خير.',
+            'س': 'سلامة الإنسان في حفظ اللسان.',
+            'ش': 'شاور من جرب.',
+            'ص': 'صبرك على المُرِّ يوصلك إلى النجاح.',
+            'ض': 'ضوء القمر هادئ ولكنه يبدد الظلام.',
+            'ط': 'طريق الألف ميل يبدأ بخطوة.',
+            'ظ': 'ظن الخير دائمًا.',
+            'ع': 'عش يومك كأنه آخر يوم.',
+            'غ': 'غير حياتك بتغيير أفكارك.',
+            'ف': 'فكر قبل أن تتكلم.',
+            'ق': 'قليل دائم خير من كثير منقطع.',
+            'ك': 'كن إيجابيًا ترى الحياة أجمل.',
+            'ل': 'لا تؤجل عمل اليوم إلى الغد.',
+            'م': 'من جد وجد ومن زرع حصد.',
+            'ن': 'نقاء القلب سر السعادة.',
+            'ه': 'هوّن عليك، فكل شيء سيمر.',
+            'و': 'ودع اليأس وتمسك بالأمل.',
+            'ي': 'يد الله مع الجماعة.'
+        };
+
+        const container = document.getElementById('letters-container');
+        const output = document.getElementById('output');
+
+        letters.forEach(letter => {
+            const div = document.createElement('div');
+            div.className = 'letter';
+            div.textContent = letter;
+            div.addEventListener('click', () => {
+                output.textContent = quotes[letter] || 'لا توجد مقولة لهذا الحرف.';
+            });
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
